@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block title %}Dwarf{% endblock %}
+{% block content %}
+<div class="container">
+        <div class="row">
+                <div class="col">
+                        <center>
+                                <div class="card text-white bg-primary mb-3" style="width: 60rem; height: 16rem;">
+                                        <div class="card-body">
+                                                <h4 class="card-title">Paste the URL to be shortened</h4>
+                                                <br>
+                                                <form action="/shorten" method="post" class="needs-validation"
+                                                        novalidate>
+                                                        <input type="url" name="url" class="form-control"
+                                                                id="validationCustom01" placeholder="URL" required>
+                                                        <div class="valid-feedback">
+                                                                Looks good!
+                                                        </div>
+                                                        <br>
+                                                        <label id="shortUrl"><a href="{{ shorturl }}">{{ shorturl
+                                                                        }}</a></label>
+                                                        <br>
+                                                        <button class="btn btn-success" type="submit">Submit
+                                                                form</button>
+                                                </form>
+                        </center>
+                </div>
+        </div>
+</div>
+</div>
+</div>
+<hr class="my-4">
+<div class="container">
+        <div class="row mt-2">
+                <div class="col-md-4">
+                        <blockquote class="blockquote text-center">
+                                <span><i class="fas fa-fist-raised fa-3x text-secondary"></i></span><br><br>
+                                <p class="mb-0">The provided urls are stored securely thanks to base62 encoding
+                                        and our integration of NoSQL database</p>
+                        </blockquote>
+                </div>
+                <div class="col-md-4">
+                        <blockquote class="blockquote text-center">
+                                <span><i class="fas fa-fingerprint fa-3x text-warning"></i></span><br><br>
+                                <p class="mb-0">Offers unique link to up 30 million users per month
+                                        can generate upto 3.5 trillion unique url</p>
+                        </blockquote>
+                </div>
+                <div class="col-md-4">
+                        <blockquote class="blockquote text-center">
+                                <span><i class="fas fa-tachometer-alt fa-3x text-danger"></i></span><br><br>
+                                <p class="mb-0">High Speed, almost real time conversion using in memory database.
+                                        This is possible due to our implementation of redis caching system</p>
+                        </blockquote>
+                </div>
+                <div class="row mt-4">
+                        <div class="col-md-4">
+                                <blockquote class="blockquote text-center">
+                                        <span><i
+                                                        class="fas fa-balance-scale-left fa-3x text-primary"></i></span><br><br>
+                                        <p class="mb-0">Dwarf is highly scalable thanks to our robust encoding
+                                                techniques
+                                        </p>
+                                </blockquote>
+                        </div>
+                        <div class="col-md-4">
+                                <blockquote class="blockquote text-center">
+                                        <span><i class="fas fa-thumbs-up fa-3x text-info"></i></span><br><br>
+                                        <p class="mb-0">Dwarf is pretty simple to use
+                                                just enter the url in the field provided</p>
+                                </blockquote>
+                        </div>
+                        <div class="col-md-4">
+                                <blockquote class="blockquote text-center">
+                                        <span><i class="fas fa-link fa-3x text-success"></i></span><br><br>
+                                        <p class="mb-0">Dwarf provides 7 character length short urls
+                                                for any given long url</p>
+                                </blockquote>
+                        </div>
+                </div>
+                {% endblock %}

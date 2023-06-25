@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS with theme from bootswatch-->
+        <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-T5jhQKMh96HMkXwqVMSjF3CmLcL1nT9//tCqu9By5XSdj7CwR0r+F3LTzUdfkkQf" crossorigin="anonymous" id="botstrap-css">
+        <!-- Boostrap Scripts -->
+        <!-- scripts -->
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/9e0036f329.js"></script>
+        <style>
+            body{
+                background: #ecf0f1;
+            }
+            footer {
+                /* just for demo */
+                background-color: #2C3E50;
+                border-top: 1px solid #ecf0f1;
+                text-align:center;
+                padding:20px;
+                /* just for demo */ 
+  
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 60px;
+                width: 100%;
+            }
+        </style>
+        <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function() {
+                  'use strict';
+                  window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                      form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                      }, false);
+                    });
+                  }, false);
+                })();
+        </script>
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+      <div class="container">
+            <center><h1 class="page-header display-3   text-primary">Dwarf <small class = "text-secondary"  >URL</small>  </h1></center>
+      </div>
+    <div id="content">{% block content %}{% endblock %}</div>  
+    <div id="footer ">
+      {% block footer %}
+      <footer class="footer mt-auto py-3 ">
+            <div class="container ">
+              <span class="text-muted">&copy;2020 <a href="https://dwarfurls.herokuapp.com/">Dwarf</a></span>
+            </div>
+        </footer>
+      {% endblock %}
+    </div>
+  </body>
+</html>
